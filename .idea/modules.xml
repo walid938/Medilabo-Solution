@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Medilabo-Solution.iml" filepath="$PROJECT_DIR$/.idea/Medilabo-Solution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-patient/mspatient.iml" filepath="$PROJECT_DIR$/microservice-patient/mspatient.iml" />
     </modules>
   </component>
 </project>
