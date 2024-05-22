@@ -2,8 +2,16 @@ package mspatient.model;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.Date;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 @Table(name = "patient")
 public class Patient {
 
@@ -16,7 +24,7 @@ public class Patient {
     @Column(name="lastName")
     private String lastName;
     @Column(name ="date_of_birth")
-    private String dateOfBirth;
+    private Date dateOfBirth;
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
