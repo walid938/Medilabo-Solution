@@ -14,9 +14,6 @@ public class PatientServiceImpl implements PatientService {
     @Autowired
     private PatientRepository patientRepository;
 
-    private PatientServiceImpl(PatientRepository patientRepository) {
-        this.patientRepository = patientRepository;
-    }
 
     @Override
     public List<Patient> getAllPatient() {
@@ -58,7 +55,7 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public List<Patient> getPatientByFirstNameAndLastName(String firstName, String lastName) {
-            return patientRepository.FindByFirstNameAndLastName(firstName, lastName);
+            return patientRepository.findByFirstNameAndLastName(firstName, lastName);
     }
 
 

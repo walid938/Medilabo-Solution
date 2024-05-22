@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Long> {
 
-List<Patient> FindByFirstNameAndLastName(String firstName, String lastName);
+List<Patient> findByFirstNameAndLastName(String firstName, String lastName);
 }
