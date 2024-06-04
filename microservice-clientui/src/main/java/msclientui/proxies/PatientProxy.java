@@ -6,25 +6,25 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name="microservice-patient", url="localhost:8080/api/patient")
+@FeignClient(name="microservice-gateway", url="localhost:8181")
 public interface PatientProxy {
 
-    @GetMapping
+    @GetMapping("/api/patient")
     List<PatientBeans> getAllPatients();
 
-    @GetMapping("/{id}")
+    @GetMapping("/api/patient/{id}")
     PatientBeans getPatientById(@PathVariable("id") Long id);
 
-    @GetMapping("/search")
+    @GetMapping("/api/patient/search")
     List<PatientBeans> searchPatients(@RequestParam("firstName") String firstName,
                                  @RequestParam("lastName") String lastName);
 
-    @PostMapping
+    @PostMapping("/api/patient")
     PatientBeans createPatient(@RequestBody PatientBeans patientBeans);
 
-    @PutMapping("/{id}")
+    @PutMapping("/api/patient/{id}")
     PatientBeans updatePatient(@PathVariable("id") Long id, @RequestBody PatientBeans patient);
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/api/patient/{id}")
     void deletePatient(@PathVariable("id") Long id);
 }
