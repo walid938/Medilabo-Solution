@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/microservice-patient/pom.xml" />
         <option value="$PROJECT_DIR$/microservice-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/microservice-clientui/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-notes/pom.xml" />
       </list>
     </option>
   </component>

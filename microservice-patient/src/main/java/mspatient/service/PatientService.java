@@ -9,9 +9,9 @@ import java.util.Optional;
 @Service
 public interface PatientService {
     List<Patient> findAll();
-    Optional<Patient> findById(Long id);
+    Optional<Patient> findById(int id);
     List<Patient> findByFirstNameAndLastName(String firstName, String lastName);
     Patient save(Patient patient);
-    void deleteById(Long id);
+    void deleteById(int id);
     boolean existsByFirstNameAndLastName(String firstName, String lastName);
 }

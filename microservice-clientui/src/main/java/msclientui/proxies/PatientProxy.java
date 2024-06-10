@@ -13,7 +13,7 @@ public interface PatientProxy {
     List<PatientBeans> getAllPatients();
 
     @GetMapping("/api/patient/{id}")
-    PatientBeans getPatientById(@PathVariable("id") Long id);
+    PatientBeans getPatientById(@PathVariable("id") int id);
 
     @GetMapping("/api/patient/search")
     List<PatientBeans> searchPatients(@RequestParam("firstName") String firstName,
@@ -23,8 +23,8 @@ public interface PatientProxy {
     PatientBeans createPatient(@RequestBody PatientBeans patientBeans);
 
     @PutMapping("/api/patient/{id}")
-    PatientBeans updatePatient(@PathVariable("id") Long id, @RequestBody PatientBeans patient);
+    PatientBeans updatePatient(@PathVariable("id") int id, @RequestBody PatientBeans patient);
 
     @DeleteMapping("/api/patient/{id}")
-    void deletePatient(@PathVariable("id") Long id);
+    void deletePatient(@PathVariable("id") int id);
 }
