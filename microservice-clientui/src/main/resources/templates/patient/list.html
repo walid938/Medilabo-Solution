@@ -44,10 +44,8 @@
             <td th:text="${patient.gender}"></td>
             <td th:text="${patient.address}"></td>
             <td th:text="${patient.phoneNumber}"></td>
-
-            <td>
-                <a th:href="@{/patient/update/{id}(id=${patient.id})}" class="btn btn-primary">Update</a>
-                <a th:href="@{/patient/delete/{id}(id=${patient.id})}" class="btn btn-danger">Delete</a>
+            <td style="width: 15%" class="text-center">
+                <a th:href="@{/patient/details(patientId=${patient.id})}">View</a>
             </td>
 
 
