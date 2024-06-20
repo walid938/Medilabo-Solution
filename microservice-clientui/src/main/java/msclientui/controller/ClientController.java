@@ -4,6 +4,7 @@ package msclientui.controller;
 import jakarta.validation.Valid;
 import msclientui.beans.NoteBeans;
 import msclientui.beans.PatientBeans;
+import msclientui.proxies.DiabeteRiskProxy;
 import msclientui.proxies.NoteProxy;
 import msclientui.proxies.PatientProxy;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,14 @@ public class ClientController {
 
     @Autowired
     private NoteProxy noteProxy;
+    @Autowired
+    private DiabeteRiskProxy diabeteRiskProxy;
+
+    public ClientController(PatientProxy patientProxy,NoteProxy noteProxy, DiabeteRiskProxy diabeteRiskProxy) {
+        this.patientProxy = patientProxy;
+        this.noteProxy = noteProxy;
+        this.diabeteRiskProxy = diabeteRiskProxy;
+    }
 
     @GetMapping("/patient/list")
     public String listPatients(Model model) {
@@ -97,6 +106,7 @@ public class ClientController {
                                      @RequestParam(required = false) String noteId) {
         model.addAttribute("patient", patientProxy.getPatientById(patientId));
         model.addAttribute("notes", noteProxy.getNotesByPatientId(patientId));
+        model.addAttribute("diabetesRiskLevel", diabeteRiskProxy.calculateDiabetesRisk(patientId));
         if (noteId != null) {
             model.addAttribute("noteToSave", noteProxy.getNoteById(noteId));
         } else {

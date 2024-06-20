@@ -17,6 +17,14 @@
     <h2 th:text="${patient.firstName} + ' '  + ${patient.lastName}"></h2>
 
     <div class="row">
+        <div class="col-12">
+            <div th:id="diabetes-risk" class="alert alert-primary" role="alert">
+                Diabetes Risk: <span th:text="${diabetesRiskLevel}"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-3">
             <table class="table table-bordered">
                 <tr>
