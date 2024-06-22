@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PatientBeans {
-    private Long id;
+    private int id;
     private String firstName;
     private String lastName;
     private LocalDate dateOfBirth;
@@ -21,6 +21,7 @@ public class PatientBeans {
     private GenderBeans gender;
     private String address;
     private String phoneNumber;
+
 
 
 }

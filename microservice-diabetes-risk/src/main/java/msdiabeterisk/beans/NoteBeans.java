@@ -16,4 +16,7 @@ public class NoteBeans {
     private String patientName;
     private String noteContent;
 
+
+    public NoteBeans(String noteContent) {
+    }
 }

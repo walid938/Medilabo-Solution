@@ -17,4 +17,6 @@ public class PatientBeans {
     private LocalDate dateOfBirth;
     private GenderBeans gender;
 
+    public PatientBeans(int patientId, String jane, String doe, LocalDate of, GenderBeans genderBeans) {
+    }
 }

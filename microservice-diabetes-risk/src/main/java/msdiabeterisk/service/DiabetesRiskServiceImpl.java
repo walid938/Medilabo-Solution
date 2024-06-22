@@ -76,10 +76,14 @@ public class DiabetesRiskServiceImpl implements DiabeteRiskService {
 
     private long countTriggerTerms(List<NoteBeans> notes) {
         return notes.stream()
-                .map(note -> note.getNoteContent().toLowerCase()) // Convertir chaque note en minuscule
+                .map(note -> {
+                    String content = note.getNoteContent();
+                    return content != null ? content.toLowerCase() : "";
+                })
                 .flatMap(noteContent -> TRIGGER_TERMS.stream().filter(noteContent::contains))
                 .count();
     }
+
 
     private int calculateAge(LocalDate dateOfBirth) {
         LocalDate now = LocalDate.now();
