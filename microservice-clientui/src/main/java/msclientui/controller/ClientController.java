@@ -117,7 +117,7 @@ public class ClientController {
 
     @PostMapping("/note/save")
     public String saveNote(@ModelAttribute("noteToSave") NoteBeans note) {
-        if (note.getId().isEmpty()) {
+        if (note.getId() == null || note.getId().isEmpty()) {
             note.setId(null);
             noteProxy.addNoteToPatient(note.getPatientId(), note);
         } else {
@@ -125,6 +125,7 @@ public class ClientController {
         }
         return "redirect:/patient/details?patientId=" + note.getPatientId();
     }
+
 
     @GetMapping("/note/delete/{id}")
     public String deleteNoteById(@PathVariable("id") String id, @RequestParam int patientId) {

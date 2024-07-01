@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(
         name = "microservice-gateway",
-        url = "http://localhost:8181"
+        url = "${link.to.the.gateway}"
 )
 public interface DiabeteRiskProxy {
 

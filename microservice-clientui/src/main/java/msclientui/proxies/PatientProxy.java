@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name="microservice-gateway", url="localhost:8181")
+@FeignClient(name="microservice-gateway", url = "${link.to.the.gateway}")
 public interface PatientProxy {
 
     @GetMapping("/api/patient")

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name = "microservice-gateway", url = "http://localhost:8181")
+@FeignClient(name = "microservice-gateway", url = "${link.to.the.gateway}")
 public interface NoteProxy {
 
     @GetMapping("/api/notes/patient/{patientId}")
