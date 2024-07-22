@@ -9,7 +9,7 @@ import java.util.List;
 
 @FeignClient(
         name = "microservice-gateway",
-        url = "${link.to.the.gateway}"
+        url = "microservice-gateway:8181"
 )
 public interface NoteProxy {
     @GetMapping({"/api/notes/patient/{patientId}"})

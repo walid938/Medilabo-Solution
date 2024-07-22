@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(
         name = "microservice-gateway",
-        url = "${link.to.the.gateway}"
+        url = "microservice-gateway:8181"
 )
 public interface PatientProxy {
     @GetMapping({"/api/patient/{id}"})

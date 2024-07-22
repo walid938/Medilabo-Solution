@@ -45,7 +45,8 @@
             <td th:text="${patient.address}"></td>
             <td th:text="${patient.phoneNumber}"></td>
             <td style="width: 15%" class="text-center">
-                <a th:href="@{/patient/details(patientId=${patient.id})}">View</a>
+                <a th:href="@{/patient/details(patientId=${patient.id})}" class="btn btn-primary">View</a>
+
             </td>
 
 
